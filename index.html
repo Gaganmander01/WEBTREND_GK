@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Budget Planner</h1>
+        <button id="logoutBtn" style="display: none;">Logout</button>
+    </header>
+
+    <div class="dashboard">
+        <div class="card">
+            <h2>Current Balance</h2>
+            <p id="balanceAmount">$0</p>
+        </div>
+        <div class="card">
+            <h2>Total Income</h2>
+            <p id="incomeAmount">$0</p>
+            <button id="addIncomeBtn">Add Income</button>
+        </div>
+        <div class="card">
+            <h2>Total Expenses</h2>
+            <p id="expenseAmount">$0</p>
+            <button id="addExpenseBtn">Add Expense</button>
+        </div>
+    </div>
+
+    <h2>My Transactions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="transactionTable"></tbody>
+    </table>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

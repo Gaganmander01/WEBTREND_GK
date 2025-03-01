@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Budget Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button id="signInBtn">Sign In</button>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module">
+        import { auth, signInWithEmailAndPassword } from "./firebase.js";
+
+        document.getElementById("signInBtn").addEventListener("click", () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    alert("Sign In Successful!");
+                    window.location.href = "index.html"; // Redirect to Dashboard
+                })
+                .catch(error => alert(error.message));
+        });
+    </script>
+</body>
+</html>
